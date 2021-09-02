@@ -8,19 +8,10 @@ const initState = {
 const gamesReducer = (state = initState, action) => {
     switch (action.type) {
         case "FETCH_GAMES":
-            return { ...state };
+            return { ...state, popular: action.payload.popular };
         default:
             return { ...state };
     }
 };
-
-// Action Creator
-const fetchGames = (userData) => {
-    return {
-        type: "FETCH_GAMES",
-    };
-};
-
-fetchGames();
 
 export default gamesReducer;
